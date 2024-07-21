@@ -11,6 +11,30 @@ ConfettiMakerLibrary is an Android library that provides a customizable Confetti
 - Easy integration with Android XML layout
 - Supports dynamic runtime updates
 
+## XML Attributes
+
+- app:confettiColor - The color of the confetti (used if useSolidColor is true).
+- app:useSolidColor - Whether to use a single color or random colors.
+- app:minSize - The minimum size of the confetti.
+- app:maxSize - The maximum size of the confetti.
+- app:minSpeedX - The minimum horizontal speed of the confetti.
+- app:maxSpeedX - The maximum horizontal speed of the confetti.
+- app:minSpeedY - The minimum vertical speed of the confetti.
+- app:maxSpeedY - The maximum vertical speed of the confetti.
+- app:gravity - The gravity effect on the confetti.
+- app:shapeType - The shape of the confetti (0 for circle, 1 for rectangle, 2 for snowflake).
+
+## Java Methods
+
+- setConfettiColor(int color) - Set the confetti color.
+- setUseSolidColor(boolean useSolidColor) - Set whether to use a single color or random colors.
+- setSizeRange(float minSize, float maxSize) - Set the size range of the confetti.
+- setSpeedXRange(float minSpeedX, float maxSpeedX) - Set the horizontal speed range of the confetti.
+- setSpeedYRange(float minSpeedY, float maxSpeedY) - Set the vertical speed range of the confetti.
+- setGravity(float gravity) - Set the gravity effect on the confetti.
+- setShapeType(int shapeType) - Set the shape type of the confetti.
+- getShapeType() - Get the current shape type of the confetti.
+
 ## Installation
 
 Add the JitPack repository to your root `build.gradle` file:
@@ -31,26 +55,4 @@ dependencies {
 }
 ```
 
-## XML Attributes
 
-app:confettiColor - The color of the confetti (used if useSolidColor is true).
-app:useSolidColor - Whether to use a single color or random colors.
-app:minSize - The minimum size of the confetti.
-app:maxSize - The maximum size of the confetti.
-app:minSpeedX - The minimum horizontal speed of the confetti.
-app:maxSpeedX - The maximum horizontal speed of the confetti.
-app:minSpeedY - The minimum vertical speed of the confetti.
-app:maxSpeedY - The maximum vertical speed of the confetti.
-app:gravity - The gravity effect on the confetti.
-app:shapeType - The shape of the confetti (0 for circle, 1 for rectangle, 2 for snowflake).
-
-## Java Methods
-
-setConfettiColor(int color) - Set the confetti color.
-setUseSolidColor(boolean useSolidColor) - Set whether to use a single color or random colors.
-setSizeRange(float minSize, float maxSize) - Set the size range of the confetti.
-setSpeedXRange(float minSpeedX, float maxSpeedX) - Set the horizontal speed range of the confetti.
-setSpeedYRange(float minSpeedY, float maxSpeedY) - Set the vertical speed range of the confetti.
-setGravity(float gravity) - Set the gravity effect on the confetti.
-setShapeType(int shapeType) - Set the shape type of the confetti.
-getShapeType() - Get the current shape type of the confetti.
