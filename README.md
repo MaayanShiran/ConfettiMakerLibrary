@@ -88,7 +88,7 @@ dependencies {
 ```
 
 ### Java Code
-
+```
 package com.classy.confettimaker;
 
 import android.os.Bundle;
@@ -129,5 +129,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
+```
 
