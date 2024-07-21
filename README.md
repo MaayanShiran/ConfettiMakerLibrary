@@ -54,5 +54,80 @@ dependencies {
     implementation("com.github.MaayanShiran:ConfettiMakerLibrary:1.00.13")
 }
 ```
+## Usage Example
+
+### XML Layout
+```
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.classy.confetti.ConfettiView
+        android:id="@+id/confettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:confettiColor="#FF0000"
+        app:useSolidColor="true"
+        app:minSize="5"
+        app:maxSize="20"
+        app:minSpeedX="-5"
+        app:maxSpeedX="5"
+        app:minSpeedY="3"
+        app:maxSpeedY="10"
+        app:gravity="0.5"
+        app:shapeType="2" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Confetti"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
+```
+
+### Java Code
+
+package com.classy.confettimaker;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import com.classy.confetti.CircleParticle;
+import com.classy.confetti.ConfettiView;
+import com.classy.confetti.Particle;
+import com.classy.confetti.RectangleParticle;
+import com.classy.confetti.SnowflakeParticle;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ConfettiView confettiView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        confettiView = findViewById(R.id.confettiView);
+
+        findViewById(R.id.startButton).setOnClickListener(v -> {
+            int shapeType = confettiView.getShapeType();
+            Class<? extends Particle> particleClass;
+            switch (shapeType) {
+                case ConfettiView.SHAPE_RECTANGLE:
+                    particleClass = RectangleParticle.class;
+                    break;
+                case ConfettiView.SHAPE_SNOWFLAKE:
+                    particleClass = SnowflakeParticle.class;
+                    break;
+                case ConfettiView.SHAPE_CIRCLE:
+                default:
+                    particleClass = CircleParticle.class;
+                    break;
+            }
+            confettiView.startConfetti(100, particleClass);
+        });
+    }
+}
 
 
