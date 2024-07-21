@@ -22,3 +22,10 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+
+Add the dependency to your module build.gradle file:
+
+dependencies {
+    implementation("com.github.MaayanShiran:ConfettiMakerLibrary:1.00.13")
+}
+
